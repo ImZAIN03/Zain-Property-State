@@ -24,12 +24,12 @@ export default function Header() {
     }
   }, [location.search]);
   return (
-    <header className='bg-neutral-500  shadow-md'>
+    <header className='bg-gradient-to-r from-neutral-500 to-neutral-700  shadow-md'>
       <div className='flex justify-between items-center max-w-6xl mx-auto p-3'>
         <Link to='/'>
-          <h1 className='font-bold text-sm sm:text-xl flex flex-wrap'>
-            <span className='text-slate-300'>Zee</span>
-            <span className='text-slate-700'>Estate</span>
+          <h1 className='font-bold text-sm sm:text-xl flex flex-wrap gap-[1px]'>
+            <span className='text-slate-300'>Real</span>
+            <span className='text-slate-900'>Estate</span>
           </h1>
         </Link>
         <form
@@ -47,7 +47,7 @@ export default function Header() {
             <FaSearch className='text-slate-600' />
           </button>
         </form>
-        <ul className='flex gap-4'>
+        <ul className='text-lg font-semibold flex gap-6'>
           <Link to='/'>
             <li className='hidden sm:inline text-white hover:underline'>
               Home
@@ -66,7 +66,7 @@ export default function Header() {
                 alt='profile'
               />
             ) : (
-              <li className=' text-slate-700 hover:underline'> Sign in</li>
+              <li className=' text-white hover:underline uppercase'> Sign in</li>
             )}
           </Link>
         </ul>
