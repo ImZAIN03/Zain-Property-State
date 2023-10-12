@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import ListingItem from '../components/ListingItem';
+import ListingItem from '../components/ListingItem';
 
 export default function Search() {
   const navigate = useNavigate();
@@ -47,6 +47,7 @@ export default function Search() {
         order: orderFromUrl || 'desc',
       });
     }
+    console.log(listings);
     const fetchListings = async () => {
       setLoading(true);
       setShowMore(false);
@@ -128,7 +129,7 @@ export default function Search() {
   };
   return (
     <div className='flex flex-col md:flex-row'>
-      <div className='p-7  border-b-2 md:border-r-2 md:min-h-screen'>
+      <div className='text-black p-7 bg-slate-300 border-b-2 md:border-r-2 md:min-h-screen'>
         <form onSubmit={handleSubmit} className='flex flex-col gap-8'>
           <div className='flex items-center gap-2'>
             <label className='whitespace-nowrap font-semibold'>
@@ -237,7 +238,7 @@ export default function Search() {
             <p className='text-xl text-slate-700'>No listing found!</p>
           )}
           {loading && (
-            <p className='text-xl text-slate-700 text-center w-full'>
+            <p className='text-3xl font-semibold text-slate-700 text-center w-full'>
               Loading...
             </p>
           )}
