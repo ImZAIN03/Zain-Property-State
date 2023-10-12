@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ListingItem from '../components/ListingItem';
@@ -47,7 +48,7 @@ export default function Search() {
         order: orderFromUrl || 'desc',
       });
     }
-    console.log(listings);
+
     const fetchListings = async () => {
       setLoading(true);
       setShowMore(false);
@@ -129,7 +130,7 @@ export default function Search() {
   };
   return (
     <div className='flex flex-col md:flex-row'>
-      <div className='text-black p-7 bg-slate-300 border-b-2 md:border-r-2 md:min-h-screen'>
+      <div className='p-7  border-b-4 md:border-r-4 md:min-h-screen'>
         <form onSubmit={handleSubmit} className='flex flex-col gap-8'>
           <div className='flex items-center gap-2'>
             <label className='whitespace-nowrap font-semibold'>
@@ -230,15 +231,15 @@ export default function Search() {
         </form>
       </div>
       <div className='flex-1'>
-        <h1 className='text-3xl font-semibold border-b p-3 text-slate-700 mt-5'>
-          Listing Results:
+        <h1 className='text-3xl font-semibold border-b-2 p-3 text-slate-700 mt-5'>
+          Listing results:
         </h1>
         <div className='p-7 flex flex-wrap gap-4'>
           {!loading && listings.length === 0 && (
             <p className='text-xl text-slate-700'>No listing found!</p>
           )}
           {loading && (
-            <p className='text-3xl font-semibold text-slate-700 text-center w-full'>
+            <p className='text-xl text-slate-700 text-center w-full'>
               Loading...
             </p>
           )}
@@ -252,7 +253,7 @@ export default function Search() {
           {showMore && (
             <button
               onClick={onShowMoreClick}
-              className='text-green-700 hover:underline p-7 text-center w-full'
+              className='uppercase text-lg text-green-700 hover:underline p-7 text-center w-full'
             >
               Show more
             </button>
